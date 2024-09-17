@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  reactStrictMode: false,
+  eslint: {
+    dirs: ['app', 'components', 'hooks', 'lib', 'test', 'types', 'util'],
+  },
+}
 
-export default nextConfig;
+export default nextConfig
