@@ -1,25 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Boilerplate ![GitHub CI](https://github.com/michaelclemens/nextjs-boilerplate/actions/workflows/ci.yml/badge.svg)
 
-## Getting Started
+## Overview
 
-First, run the development server:
+[Next.js 14 with App Router](https://nextjs.org/docs) boilerplate template including:
+### Base Next.js 14
+- ⚛️ [React 18](https://18.react.dev/)
+- ✨ [TypeScript](https://www.typescriptlang.org/docs/)
+- 💨 [Tailwind CSS 3](https://tailwindcss.com/docs)
+- 📏 [ESLint](https://eslint.org/docs)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Additional
+- 🌈 [Prisma ORM](https://www.prisma.io/docs/orm)
+- 🐘 [PostgreSQL 16](https://www.postgresql.org/docs/16/index.html) (docker-compose container)
+- 🃏 [Jest](https://jestjs.io/docs) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- 💖 [Prettier](https://prettier.io/docs/en/)
+- 👷 [GitHub Actions](https://docs.github.com/en/actions) (CI + Dependabot config)
+
+## Getting started 🚀
+
+### 1. Install dependencies
+
+Install npm dependencies:
+
+```
+npm ci
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Create and seed the database
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you're using Docker on your computer, the following script will set up a PostgreSQL database using the `docker-compose.yml` file at the root of
+your project:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load
-[Geist](https://vercel.com/font), a new font family for Vercel.
+```
+npm run db:up
+```
+
+[Model your data in the Prisma schema](https://www.prisma.io/docs/getting-started/quickstart#2-model-your-data-in-the-prisma-schema) by editing the [`prisma/schema.prisma`](./prisma/schema.prisma) fiile
+
+
+Run the following command to create your PostgreSQL database:
+
+```
+npx prisma migrate dev --name init
+```
+
+When `npx prisma migrate dev` is executed against a newly created database, seeding is also triggered. To add seeding, create a [`seed file`](https://www.prisma.io/docs/getting-started/quickstart#2-model-your-data-in-the-prisma-schema) in [`prisma/seed.ts`](./prisma/seed.ts) and it will be executed against your database.
+
+### 3. Configuring your environment
+
+```
+cp .env.example .env
+```
+
+Ensure these variables are correct.
+
+### 4. Start the app
+
+```
+npm run dev
+```
+
+The app is now running, navigate to [`http://localhost:3000/`](http://localhost:3000/) in your browser to explore its UI.
 
 ## Learn More
 
