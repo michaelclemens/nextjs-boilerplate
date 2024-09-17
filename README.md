@@ -3,13 +3,16 @@
 ## Overview
 
 [Next.js 14 with App Router](https://nextjs.org/docs) boilerplate template including:
+
 ### Base Next.js 14
+
 - ⚛️ [React 18](https://18.react.dev/)
 - ✨ [TypeScript](https://www.typescriptlang.org/docs/)
 - 💨 [Tailwind CSS 3](https://tailwindcss.com/docs)
 - 📏 [ESLint](https://eslint.org/docs)
 
 ### Additional
+
 - 🌈 [Prisma ORM](https://www.prisma.io/docs/orm)
 - 🐘 [PostgreSQL 16](https://www.postgresql.org/docs/16/index.html) (docker-compose container)
 - 🃏 [Jest](https://jestjs.io/docs) + [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
@@ -35,8 +38,8 @@ your project:
 npm run db:up
 ```
 
-[Model your data in the Prisma schema](https://www.prisma.io/docs/getting-started/quickstart#2-model-your-data-in-the-prisma-schema) by editing the [`prisma/schema.prisma`](./prisma/schema.prisma) fiile
-
+[Model your data in the Prisma schema](https://www.prisma.io/docs/getting-started/quickstart#2-model-your-data-in-the-prisma-schema) by editing the
+[`prisma/schema.prisma`](./prisma/schema.prisma) fiile
 
 Run the following command to create your PostgreSQL database:
 
@@ -44,7 +47,9 @@ Run the following command to create your PostgreSQL database:
 npx prisma migrate dev --name init
 ```
 
-When `npx prisma migrate dev` is executed against a newly created database, seeding is also triggered. To add seeding, create a [`seed file`](https://www.prisma.io/docs/getting-started/quickstart#2-model-your-data-in-the-prisma-schema) in [`prisma/seed.ts`](./prisma/seed.ts) and it will be executed against your database.
+When `npx prisma migrate dev` is executed against a newly created database, seeding is also triggered. To add seeding, create a
+[`seed file`](https://www.prisma.io/docs/getting-started/quickstart#2-model-your-data-in-the-prisma-schema) in [`prisma/seed.ts`](./prisma/seed.ts)
+and it will be executed against your database.
 
 ### 3. Configuring your environment
 
